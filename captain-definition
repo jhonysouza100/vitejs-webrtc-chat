@@ -1,0 +1,15 @@
+ {
+  "schemaVersion": 2,
+  "dockerfileLines": [
+    "FROM node:18-alpine",
+    "WORKDIR /app",
+    "COPY ./package.json /app/",
+    "RUN npm install && npm cache clean --force",
+    "COPY ./ /app",
+    "ARG VITE_SOCKET",
+    "ENV VITE_SOCKET $VITE_SOCKET",
+    "ENV NODE_ENV production",
+    "RUN npm run build",
+    "CMD [ \"npm\",\"run\", \"preview\" ]"
+  ]
+}
