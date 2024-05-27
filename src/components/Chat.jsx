@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Output from "./Output";
 import Input from "./Input";
+import config from "../config";
 
 export default function Chat({socket}) {
 
@@ -36,6 +37,7 @@ export default function Chat({socket}) {
   
   return (
     <div className="bg-zinc-900 p-10">
+      <p>{config.SOCKET}</p>
       <h2 className="text-2xl font-bold my-2"><span className="text-amber-500">Jacky</span> & <span className="text-indigo-500">Jhony</span> Chat</h2>
       <Input handleSubmit={handleSubmit} setMessage={setMessage} />
       <Output messages={messages} />
