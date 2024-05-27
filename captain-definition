@@ -4,7 +4,7 @@
     "FROM node:20-alpine",
     "WORKDIR /app",
     "COPY ./package.json /app/",
-    "RUN npm install && npm cache clean --force",
+    "RUN npm install",
     "COPY ./ /app",
     "ARG VITE_SOCKET",
     "ENV VITE_SOCKET $VITE_SOCKET",
