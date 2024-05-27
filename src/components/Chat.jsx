@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Output from "./Output";
 import Input from "./Input";
-import config from "../config";
+import {config} from "../config";
 
 export default function Chat({socket}) {
 
